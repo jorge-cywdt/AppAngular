@@ -1,2 +1,2 @@
-# CrudMVC
-CRUD en Java MVC con MySQL
+# AppAngular
+App Angular
