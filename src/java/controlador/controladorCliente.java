@@ -176,7 +176,7 @@ public class controladorCliente extends HttpServlet {
 
                 String eliminar = objCli.getEstado() == 1 ?
                 "<a class=\"btn btn-sm btn-dark\" href=\"javascript:confirm('" + objCli.getId() + "')\" onclick=\"return confirm('Estas seguro que quieres eliminar?');\">desactivar</a>" :
-                "<a class=\"btn btn-sm btn-dark\" href=\"javascript:confirm('" + objCli.getId() + "')\" onclick=\"return confirm('Estas seguro que quieres eliminar?');\">activar</a>";
+                "<a class=\"btn btn-sm btn-primary\" href=\"javascript:confirm('" + objCli.getId() + "')\" onclick=\"return confirm('Estas seguro que quieres eliminar?');\">activar</a>";
                 item.put(eliminar);
 
                 String estado = objCli.getEstado() == 1 ?
