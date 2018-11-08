@@ -37,13 +37,14 @@ $(document).ready( function () {
     });
     
     var div = $('<div class="row">\n\
-                 <div id="div" class="col-sm-12 col-md-6">\n\
+                 <div id="div" class="col-sm-12 col-md-7">\n\
                  </div>\n\
-                 <div id="div2" class="col-sm-12 col-md-6">\n\
+                 <div id="div2" class="col-sm-12 col-md-5">\n\
                  </div>\n\
                  </div>');
     $('#table_id').before(div);
-    $('.dt-buttons').appendTo('#div');    
+    $('h4 a').appendTo('#div');
+    $('.dt-buttons').appendTo('#div');
     $('#table_id_filter').appendTo('#div2');
     
     var div2 = $('<div class="row">\n\
@@ -56,7 +57,7 @@ $(document).ready( function () {
     $('#table_id_info').appendTo('#div3');
     $('#table_id_paginate').appendTo('#div4');
     
-    $('.dt-buttons').addClass('mb-2');
+//    $('.dt-buttons').addClass('mb-2');
     
     $('.dt-buttons button').removeClass('btn-secondary');
     $('.dt-buttons button').addClass('btn-primary');

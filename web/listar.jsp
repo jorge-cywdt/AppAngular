@@ -28,60 +28,62 @@
                     <div class="card-body text-primary"> <!-- card-body -->
                         
                         <h5 class="card-title">Listado de clientes</h5>
-                        <table id="table_id" class="table table-bordered table-striped"> <!-- <table class="table table-sm table-bordered table-striped table-hover table-responsive"> -->
-                            <thead> <!-- class="thead-dark" -->
-                                <tr>
-                                    <th>id</th>
-                                    <th>nombre</th>
-                                    <th>apellido</th>
-                                    <th>email</th>
-                                    <th>fec. registro</th>                                    
-                                    <th>editar</th>	
-                                    <th>eliminar</th>
-                                    <th>estado</th>
-                                </tr>						
-                            </thead>					
-                            <tbody>   
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <%--
-                                <c:forEach var="c" items="${ cliente }">
-                                <tr>
-                                    <td><a class="btn btn-sm btn-primary" href="javascript:verCliente('${ c.getId() }')">${ c.getId() }</a></td>
-                                    <td>${ c.getNombre() }</td>
-                                    <td>${ c.getApellido() }</td>
-                                    <td>${ c.getEmail() }</td>
-                                    <td>${ c.getCreateAt() }</td>
-                                    <td><a class="btn btn-sm btn-primary" href="controladorCliente?action=buscarCliente&id=${ c.getId() }">Editar</a></td>
-                                    <c:choose>
-                                        <c:when test="${ c.getEstado() == 1 }">
-                                            <td><a class="btn btn-sm btn-danger" href="javascript:confirm('${ c.getId() }')" onclick="return confirm('Estas seguro que quieres eliminar?');">Desactivar</a></td>
-                                        </c:when> 
-                                        <c:otherwise>
-                                            <td><a class="btn btn-sm btn-danger" href="javascript:confirm('${ c.getId() }')" onclick="return confirm('Estas seguro que quieres eliminar?');">Activar</a></td>
-                                        </c:otherwise>                                            
-                                    </c:choose>
-                                    <c:choose>
-                                        <c:when test="${ c.getEstado() == 1 }">
-                                            <td><h6><span class="badge badge-success">Activado</span></h6></td>
-                                        </c:when> 
-                                        <c:otherwise>
-                                            <td><h6><span class="badge badge-dark">Desactivado</span></h6></td>
-                                        </c:otherwise>                                            
-                                    </c:choose>
-                                </tr>
-                                </c:forEach>
-                                --%>
-                            </tbody>                            
-                        </table>                        
+                        <div class="table-responsive">
+                            <table id="table_id" class="table table-bordered table-striped"> <!-- <table class="table table-sm table-bordered table-striped table-hover table-responsive"> -->
+                                <thead> <!-- class="thead-dark" -->
+                                    <tr>
+                                        <th>id</th>
+                                        <th>nombre</th>
+                                        <th>apellido</th>
+                                        <th>email</th>
+                                        <th>fec. registro</th>                                    
+                                        <th>editar</th>	
+                                        <th>eliminar</th>
+                                        <th>estado</th>
+                                    </tr>						
+                                </thead>					
+                                <tbody>   
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <%--
+                                    <c:forEach var="c" items="${ cliente }">
+                                    <tr>
+                                        <td><a class="btn btn-sm btn-primary" href="javascript:verCliente('${ c.getId() }')">${ c.getId() }</a></td>
+                                        <td>${ c.getNombre() }</td>
+                                        <td>${ c.getApellido() }</td>
+                                        <td>${ c.getEmail() }</td>
+                                        <td>${ c.getCreateAt() }</td>
+                                        <td><a class="btn btn-sm btn-primary" href="controladorCliente?action=buscarCliente&id=${ c.getId() }">Editar</a></td>
+                                        <c:choose>
+                                            <c:when test="${ c.getEstado() == 1 }">
+                                                <td><a class="btn btn-sm btn-danger" href="javascript:confirm('${ c.getId() }')" onclick="return confirm('Estas seguro que quieres eliminar?');">Desactivar</a></td>
+                                            </c:when> 
+                                            <c:otherwise>
+                                                <td><a class="btn btn-sm btn-danger" href="javascript:confirm('${ c.getId() }')" onclick="return confirm('Estas seguro que quieres eliminar?');">Activar</a></td>
+                                            </c:otherwise>                                            
+                                        </c:choose>
+                                        <c:choose>
+                                            <c:when test="${ c.getEstado() == 1 }">
+                                                <td><h6><span class="badge badge-success">Activado</span></h6></td>
+                                            </c:when> 
+                                            <c:otherwise>
+                                                <td><h6><span class="badge badge-dark">Desactivado</span></h6></td>
+                                            </c:otherwise>                                            
+                                        </c:choose>
+                                    </tr>
+                                    </c:forEach>
+                                    --%>
+                                </tbody>                            
+                            </table>
+                        </div>
                         <h4>
-                            <a class="btn btn-outline-primary" href="controladorCliente?action=formCliente">Crear Cliente</a>                            
+                            <a class="btn btn-primary mr-2" href="controladorCliente?action=formCliente">Crear Cliente</a>                            
                         </h4>
                         
                         <!-- Modal -->
