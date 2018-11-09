@@ -20,15 +20,7 @@
     <div class="container">
         <div class="row justify-content-center mt-3 pt-2"> <!-- mt-5 pt5 -->
             <div class="col-md-12"> <!-- col-md-7 -->
-                
-                <%--
-                <div>
-                    <h1 class="display-4">Crud MVC</h1> <!-- Encabezado Display -->
-		</div>                                                                
-                --%>
-                                               
-                <%-- <jsp:include page="layout/jumbotron.jsp"/> --%>
-                
+
                 <div class="card border-primary mb-3" style="max-width: 18rem;">
                     <div class="card-header">Header</div>
                     <div class="card-body text-primary">
