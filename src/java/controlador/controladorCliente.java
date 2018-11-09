@@ -150,7 +150,7 @@ public class controladorCliente extends HttpServlet {
     private void findAll(HttpServletRequest request, HttpServletResponse response) {        
         try {                        
 //            request.setAttribute("cliente", objDaoCli.findAll());
-            request.getRequestDispatcher("listar.jsp").forward(request, response); // Redirecciones en el servidor
+            request.getRequestDispatcher("listarCliente.jsp").forward(request, response); // Redirecciones en el servidor
 //            response.sendRedirect("ruta"); // Redirecciones en el cliente
         } catch (ServletException ex) { // request.getRequestDispatcher
             Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -201,7 +201,7 @@ public class controladorCliente extends HttpServlet {
 
     private void crear(HttpServletRequest request, HttpServletResponse response) {
         try {
-            request.getRequestDispatcher("form.jsp").forward(request, response);
+            request.getRequestDispatcher("formCliente.jsp").forward(request, response);
         } catch (ServletException ex) {
             Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -269,7 +269,7 @@ public class controladorCliente extends HttpServlet {
                 response.sendRedirect("controladorCliente?action=listarCliente");               
             } else {                
                 request.setAttribute("cliente", objCli);
-                request.getRequestDispatcher("editar.jsp").forward(request, response);                
+                request.getRequestDispatcher("editarCliente.jsp").forward(request, response);                
             }            
         } catch (ServletException ex) {
             Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);

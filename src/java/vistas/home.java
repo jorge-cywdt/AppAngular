@@ -43,7 +43,7 @@ public class home extends HttpServlet {
 //            out.println("</html>");
 //        }
         
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
