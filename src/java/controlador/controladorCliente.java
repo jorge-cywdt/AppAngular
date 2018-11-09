@@ -72,16 +72,16 @@ public class controladorCliente extends HttpServlet {
                 findAllWithAjax(request, response);
             break;
             
+            case "buscarCliente":
+                findById(request, response);
+            break;
+            
             case "formCliente":
                 crear(request, response);
             break;
             
             case "saveCliente":
                 save(request, response);
-            break;
-            
-            case "buscarCliente":
-                findById(request, response);
             break;
             
             case "updateCliente":
@@ -145,9 +145,7 @@ public class controladorCliente extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
-    
-    private void findAll(HttpServletRequest request, HttpServletResponse response) {        
+    private void findAll(HttpServletRequest request, HttpServletResponse response) {
         try {                        
 //            request.setAttribute("cliente", objDaoCli.findAll());
             request.getRequestDispatcher("listarCliente.jsp").forward(request, response); // Redirecciones en el servidor
@@ -194,6 +192,27 @@ public class controladorCliente extends HttpServlet {
             json.put("recordsFiltered", cli.size());
             json.put("data", listJson);
             out.print(json); 
+        } catch (IOException ex) {
+            Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void findById(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));                       
+            
+            cliente objCli = new cliente();
+            objCli = objDaoCli.findById(id);
+            
+            if (objCli.getNombre() == null) {
+                request.getSession().setAttribute("mensajeError", "El ID del cliente no existe en la BD");
+                response.sendRedirect("controladorCliente?action=listarCliente");               
+            } else {                
+                request.setAttribute("cliente", objCli);
+                request.getRequestDispatcher("editarCliente.jsp").forward(request, response);                
+            }            
+        } catch (ServletException ex) {
+            Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -250,27 +269,6 @@ public class controladorCliente extends HttpServlet {
                     response.sendRedirect("controladorCliente?action=formCliente");
                 }
             }
-        } catch (ServletException ex) {
-            Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    private void findById(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));                       
-            
-            cliente objCli = new cliente();
-            objCli = objDaoCli.findById(id);
-            
-            if (objCli.getNombre() == null) {
-                request.getSession().setAttribute("mensajeError", "El ID del cliente no existe en la BD");
-                response.sendRedirect("controladorCliente?action=listarCliente");               
-            } else {                
-                request.setAttribute("cliente", objCli);
-                request.getRequestDispatcher("editarCliente.jsp").forward(request, response);                
-            }            
         } catch (ServletException ex) {
             Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

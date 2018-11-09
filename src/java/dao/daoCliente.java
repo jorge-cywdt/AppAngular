@@ -50,27 +50,6 @@ public class daoCliente {
         return null;
     }
     
-    public boolean save(cliente obj) {
-        String sql = "insert into clientes (nombre, apellido, email, create_at)"
-                   + "values('" + obj.getNombre() + "','" + obj.getApellido() + "','" + obj.getEmail() + "','" + obj.getCreateAt() + "','" + obj.getEstado() + "')";
-        try {
-            cn = objCon.getConnection();
-            ps = cn.prepareStatement(sql);
-            ps.executeUpdate();
-            
-            cn.close();
-            ps.close();
-            cn = null;
-            ps = null;           
-            return true;
-        } catch (SQLException ex) {                 
-            System.out.println(ex.getMessage());
-            System.out.println("Error en save");
-            SQLException = ex.getMessage();
-        }
-        return false;
-    }
-    
     public cliente findById(int id) {
         cliente objCli = new cliente();
         String sql = "select id,nombre,apellido,email,create_at,estado from clientes where id = " + id + " order by id";
@@ -101,6 +80,27 @@ public class daoCliente {
         }                
         return null;
     }
+    
+    public boolean save(cliente obj) {
+        String sql = "insert into clientes (nombre, apellido, email, create_at)"
+                   + "values('" + obj.getNombre() + "','" + obj.getApellido() + "','" + obj.getEmail() + "','" + obj.getCreateAt() + "','" + obj.getEstado() + "')";
+        try {
+            cn = objCon.getConnection();
+            ps = cn.prepareStatement(sql);
+            ps.executeUpdate();
+            
+            cn.close();
+            ps.close();
+            cn = null;
+            ps = null;           
+            return true;
+        } catch (SQLException ex) {                 
+            System.out.println(ex.getMessage());
+            System.out.println("Error en save");
+            SQLException = ex.getMessage();
+        }
+        return false;
+    }        
     
     public boolean update(cliente obj) {
         String sql = "update clientes set nombre = '" + obj.getNombre() + "',apellido = '" + obj.getApellido() + "',email = '" + obj.getEmail() + "',create_at = '" + obj.getCreateAt() + "' where id = " + obj.getId() + "";
