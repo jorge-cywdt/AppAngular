@@ -126,9 +126,18 @@
     
     <script>
         function confirm(id) {
-            alertify.confirm("Estas seguro que quieres eliminar?",
-            function(){
-                location.href="controladorCliente?action=cambiarEstadoCliente&id=" + id;
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {                                        
+                    $(location).attr('href',"controladorCliente?action=cambiarEstadoCliente&id=" + id);
+//                    location.href="controladorCliente?action=cambiarEstadoCliente&id=" + id;
+                }
             });
         }
         
