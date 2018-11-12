@@ -127,18 +127,19 @@
     <script>
         function confirm(id) {
             swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {                                        
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
                     $(location).attr('href',"controladorCliente?action=cambiarEstadoCliente&id=" + id);
 //                    location.href="controladorCliente?action=cambiarEstadoCliente&id=" + id;
                 }
-            });
+            })
         }
         
         function verCliente(id) {            
