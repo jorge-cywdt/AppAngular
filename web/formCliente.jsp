@@ -63,8 +63,8 @@
                                 </div>		                        
                             </div>                            		                    		                    		                    		                    
                             <h4>
-                                <button type="submit" name="action" value="saveCliente" class="btn btn-primary">Crear Cliente</button>
-                                <a class="btn btn-primary" href="controladorCliente?action=listarCliente">Atras</a>
+                                <button type="submit" name="action" value="saveCliente" class="btn btn-secondary">Crear Cliente</button>
+                                <a class="btn btn-secondary" href="controladorCliente?action=listarCliente">Atras</a>
                             </h4>
 
                             <input type="hidden" name="id" value="" id="id" class="form-control">
