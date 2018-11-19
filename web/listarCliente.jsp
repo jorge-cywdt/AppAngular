@@ -85,32 +85,32 @@
                         <h4>
                             <a class="btn btn-primary mr-2" href="controladorCliente?action=formCliente">Crear Cliente</a>                            
                         </h4>
-                        
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h6 class="modal-title" id="exampleModalLabel">Modal title</h6>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item list-group-item-primary">Nombre: <span id="nombre"></span></li>                                            
-                                            <li class="list-group-item">Email: <span id="email"></span></li>
-                                            <li class="list-group-item">Fec. Registro: <span id="fecRegistro"></span></li>
-                                            <li class="list-group-item">Estado: <span id="estado"></span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Atras</button>
-                                    </div>
-                                </div>
+
+                    </div>
+                </div>
+                                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLabel">Modal title</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-primary">Nombre: <span id="nombre"></span></li>                                            
+                                    <li class="list-group-item">Email: <span id="email"></span></li>
+                                    <li class="list-group-item">Fec. Registro: <span id="fecRegistro"></span></li>
+                                    <li class="list-group-item">Estado: <span id="estado"></span></li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Atras</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
