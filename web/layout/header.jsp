@@ -23,7 +23,37 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-    </nav>
+    </nav>        
+    
+    <c:if test="${ not empty mensajeExito }">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            ${ mensajeExito }
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </c:if>
+    <c:if test="${ not empty mensajeError }">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            ${ mensajeError }
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>    
+    </c:if>
+    <c:if test="${ not empty SQLException }">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            ${ SQLException }
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>    
+    </c:if>
+    <% session.setAttribute("mensajeExito", null); %>
+    <% session.setAttribute("mensajeError", null); %>
+    <% session.setAttribute("SQLException", null); %>
+    <% session.setAttribute("mensajeError2", null); %>
+    <% session.setAttribute("Datos", null); %>
     
     <%--
     ${ mensajeExito }
@@ -37,36 +67,6 @@
     <% session.setAttribute("mensajeError2", null); %>
     <% session.setAttribute("Datos", null); %>
     --%>
-    
-    <c:if test="${not empty mensajeExito}">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            ${mensajeExito}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </c:if>
-    <c:if test="${not empty mensajeError}">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            ${mensajeError}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>    
-    </c:if>
-    <c:if test="${not empty SQLException}">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            ${SQLException}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>    
-    </c:if>
-    <% session.setAttribute("mensajeExito", null); %>
-    <% session.setAttribute("mensajeError", null); %>
-    <% session.setAttribute("SQLException", null); %>
-    <% session.setAttribute("mensajeError2", null); %>
-    <% session.setAttribute("Datos", null); %>
     
     <!--
     <div class="alert alert-success" th:if="${success != null}" th:text="${success}" role="alert"></div>

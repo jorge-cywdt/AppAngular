@@ -27,11 +27,11 @@
                     <div class="card-header">Clientes</div>
                     <div class="card-body">                       
                                 
-                        <c:if test="${not empty flash}">
+                        <c:if test="${ not empty flash }">
                         <div>
                             <ul class="alert alert-danger" role="alert">
-                                <c:forEach var="flash" items="${flash}">
-                                <li class="small pt-0 mt-0">${flash}</li>
+                                <c:forEach var="flash" items="${ flash }">
+                                <li class="small pt-0 mt-0">${ flash }</li>
                                 </c:forEach>
                             </ul>
                         </div>
