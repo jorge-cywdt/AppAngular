@@ -82,7 +82,7 @@ public class daoCliente {
     }
     
     public boolean save(cliente obj) {
-        String sql = "insert into clientes (nombre, apellido, email, create_at)"
+        String sql = "insert into clientes (nombre, apellido, email, create_at, estado)"
                    + "values('" + obj.getNombre() + "','" + obj.getApellido() + "','" + obj.getEmail() + "','" + obj.getCreateAt() + "',1)";
         try {
             cn = objCon.getConnection();
