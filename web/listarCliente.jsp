@@ -50,6 +50,8 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                     <%--
                                     <c:forEach var="c" items="${ cliente }">
