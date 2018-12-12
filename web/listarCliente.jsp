@@ -138,8 +138,8 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
-                    $(location).attr('href', "controladorCliente?action=cambiarEstadoCliente&id=" + id);
-//                    location.href="controladorCliente?action=cambiarEstadoCliente&id=" + id;
+                    $(location).attr('href', 'controladorCliente?action=cambiarEstadoCliente&id=' + id);
+//                    location.href='controladorCliente?action=cambiarEstadoCliente&id=' + id;
                 }
             })
         }
