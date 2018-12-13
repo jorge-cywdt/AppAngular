@@ -2,7 +2,7 @@ $(document).ready( function () {
     
     $('#table_id').DataTable({       
         "processing": true,
-        "serverSide": true,
+        "serverSide": false,
         "ajax": "controladorCliente?action=listarClienteAjax",
         language: {
             "sProcessing":     "Procesando...",
