@@ -29,7 +29,7 @@
                         
                         <h5 class="card-title">Listado de clientes</h5>
                         <div class="table-responsive">
-                            <table id="table_id" class="table table-bordered table-striped"> <!-- <table class="table table-sm table-bordered table-striped table-hover table-responsive"> -->
+                            <table id="table_id" class="table table-bordered table-striped"> <!-- <table class="table table-sm table-bordered table-striped table-hover"> -->
                                 <thead> <!-- class="thead-dark" -->
                                     <tr>
                                         <th>id</th>
