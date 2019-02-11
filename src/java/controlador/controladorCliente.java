@@ -148,8 +148,11 @@ public class controladorCliente extends HttpServlet {
     private void findAll(HttpServletRequest request, HttpServletResponse response) {
         try {                        
 //            request.setAttribute("cliente", objDaoCli.findAll());
-            request.getRequestDispatcher("listarCliente.jsp").forward(request, response); // Redirecciones en el servidor
-//            response.sendRedirect("ruta"); // Redirecciones en el cliente
+            request.getRequestDispatcher("listarCliente.jsp").forward(request, response); // Redireccion en el servidor, podemos pasarle objetos
+            
+//            request.getSession().setAttribute("aaa", "Wea que podemos destruir");
+//            response.sendRedirect("ruta"); // Redireccion en el cliente, no podemos pasarle objetos
+                                             // Redireccion en el cliente, podemos pasarle variables de sesion, podemos destruir esos objetos                                             
         } catch (ServletException ex) { // request.getRequestDispatcher
             Logger.getLogger(controladorCliente.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) { // request.getRequestDispatcher // response.sendRedirect
@@ -199,14 +202,14 @@ public class controladorCliente extends HttpServlet {
     
     private void findById(HttpServletRequest request, HttpServletResponse response) {
         try {
-            int id = Integer.parseInt(request.getParameter("id"));                       
+            int id = Integer.parseInt(request.getParameter("id"));
             
             cliente objCli = new cliente();
             objCli = objDaoCli.findById(id);
             
             if (objCli.getNombre() == null) {
                 request.getSession().setAttribute("mensajeError", "El ID del cliente no existe en la BD");
-                response.sendRedirect("controladorCliente?action=listarCliente");               
+                response.sendRedirect("controladorCliente?action=listarCliente");
             } else {                
                 request.setAttribute("cliente", objCli);
                 request.getRequestDispatcher("editarCliente.jsp").forward(request, response);                

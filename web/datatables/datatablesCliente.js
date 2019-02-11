@@ -55,9 +55,7 @@ $(document).ready( function () {
                  </div>');
     $('#table_id').after(div2);
     $('#table_id_info').appendTo('#div3');
-    $('#table_id_paginate').appendTo('#div4');
-    
-//    $('.dt-buttons').addClass('mb-2');
+    $('#table_id_paginate').appendTo('#div4');   
     
     $('.dt-buttons button').removeClass('btn-secondary');
     $('.dt-buttons button').addClass('btn-primary');
